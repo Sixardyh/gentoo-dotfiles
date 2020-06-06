@@ -1,0 +1,5 @@
+=dev-libs/icu-58.2-r1
+*/*::pg_overlay
+games-action/multimc5::vampire
+app-misc/anki::crocket-overlay
+

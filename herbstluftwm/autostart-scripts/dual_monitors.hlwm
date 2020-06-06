@@ -1,0 +1,10 @@
+#!/bin/sh
+xrandr --output DisplayPort-0 --mode 2048x1152 --pos 0x0 --rotate normal --output HDMI-A-0 --primary --mode 1920x1080 --pos 2048x0 --rotate normal
+herbstclient remove_monitor 0
+herbstclient remove_monitor 1
+herbstclient remove_monitor 2
+sleep 0.1
+herbstclient set_monitors 2048x1152+0+0 1920x1080+2048+0
+nitrogen --head=-1 --set-zoom-fill /home/cyril/Pictures/papes/dual/bridge_boat.jpg
+xset r rate 300 60
+

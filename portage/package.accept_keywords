@@ -1,0 +1,87 @@
+sys-kernel/gentoo-sources ~amd64
+media-libs/mesa ~amd64
+x11-terms/xfce4-terminal ~amd64
+sys-libs/libomp ~amd64
+x11-libs/libdrm ~amd64
+net-im/telegram-desktop ~amd64
+dev-python/python-evdev ~amd64
+media-sound/bluez-alsa ~amd64
+media-gfx/gimp ~amd64
+x11-misc/pywal ~amd64
+media-gfx/flameshot ~amd64
+app-misc/radeontop ~amd64
+media-fonts/emojione-color-font ~amd64
+sys-process/gotop ~amd64
+net-misc/streamlink ~amd64
+dev-util/bless ~amd64
+media-video/ffmpeg ~amd64
+games-util/gamemode ~amd64
+# games-util/lutris ~amd64
+=games-util/lutris-9999 **
+games-fps/xonotic ~amd64
+net-vpn/logmein-hamachi ~amd64
+www-client/ungoogled-chromium ~amd64
+dev-util/smem ~amd64
+net-im/discord-bin ~amd64
+www-misc/buku ~amd64
+media-video/simplescreenrecorder ~amd64
+games-util/steam-launcher ~amd64
+games-util/steam-client-meta ~amd64
+games-util/steam-games-meta ~amd64
+games-util/steam-meta ~amd64
+media-fonts/steamfonts ~amd64
+media-sound/musikcube ~amd64
+dev-python/ntlm-auth ~amd64
+app-misc/anki ~amd64
+virtual/jre ~amd64
+virtual/jdk ~amd64
+x11-themes/arc-theme ~amd64
+sci-misc/labview ~amd64
+app-emulation/wine-staging ~amd64
+app-emulation/wine-mono ~amd64
+app-emulation/winetricks ~amd64
+virtual/wine ~amd64
+dev-util/cmake ~amd64
+net-im/zoom ~amd64
+games-util/qjoypad ~amd64
+dev-vcs/gitstats ~amd64
+media-video/v4l2loopback ~amd64
+dev-qt/qtdiag ~amd64
+
+# llvm/clang 8
+# <sys-devel/llvm-9 ~amd64
+# <sys-devel/llvm-common-9 ~amd64
+# <sys-devel/clang-9 ~amd64
+# <sys-devel/clang-common-9 ~amd64
+# <sys-devel/clang-runtime-9 ~amd64
+# <sys-libs/compiler-rt-9 ~amd64
+# <sys-libs/compiler-rt-sanitizers-9 ~amd64
+# <sys-devel/lld-9 ~amd64
+
+# live ebuilds
+=x11-wm/herbstluftwm-9999 **
+=games-action/multimc5-9999 **
+=media-sound/cava-9999 **
+=net-misc/youtube-dl-99999999 **
+=media-fonts/siji-9999 **
+=app-misc/neofetch-9999 **
+=app-forensics/snowman-9999 **
+
+# required by ohsnap (argument)
+=media-fonts/ohsnap-1.8.0 ~amd64
+# required by extreme-tuxracer (argument)
+=games-action/extreme-tuxracer-0.7.4 ~amd64
+# required by net-im/telegram-desktop-1.4.4::4nykey
+# required by telegram-desktop (argument)
+dev-cpp/range-v3 ~amd64
+# move dev-libs/range-v3 dev-cpp/range-v3
+dev-cpp/range-v3 ~amd64
+# required by media-gfx/gimp-2.10.8::gentoo
+# required by @selected
+# required by @world (argument)
+media-libs/gegl ~amd64
+
+# required by net-im/telegram-desktop-1.8.15::4nykey
+# required by @selected
+# required by @world (argument)
+media-libs/libtgvoip ~amd64

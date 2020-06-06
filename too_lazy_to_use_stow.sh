@@ -3,7 +3,7 @@
 LIST_FILES="
   /usr/local/bin/upgrade-kernel.sh
   /usr/local/bin/update-gentoo.sh
-  ~/.config/herbstluftwm/
+  $HOME/.config/herbstluftwm/
   /etc/portage/
   /usr/local/portage/profiles/
 "

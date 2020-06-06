@@ -1,0 +1,28 @@
+#!/usr/bin/env bash
+
+hc emit_hook reload
+cd ~/.config/herbstluftwm
+
+hc lock
+
+# vars
+dir=./autostart-scripts
+
+# keybindings
+source $dir/bindings.hlwm
+
+
+# dual monitors
+source $dir/dual_monitors.hlwm
+
+# floatmon
+source $dir/floatmon.hlwm
+
+# rules
+source $dir/rules.hlwm
+
+# theme
+source $dir/theme.hlwm
+
+hc unlock
+

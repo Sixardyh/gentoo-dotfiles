@@ -1,0 +1,24 @@
+#!/bin/sh
+
+
+a=$(herbstclient list_monitors | grep two)
+
+# replace with name of your last tag
+tag="flt"
+
+# change to match your resolution
+res="3968x1152"
+
+# change to match your padding
+pad="20 0 0 0"
+
+if [ "$a" == "" ]; then
+	herbstclient floating $tag on
+
+	herbstclient add_monitor $res $tag two
+
+	herbstclient pad two $pad
+
+	herbstclient lock_tag two
+fi
+
