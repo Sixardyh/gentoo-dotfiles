@@ -6,7 +6,6 @@ x11-libs/libdrm ~amd64
 net-im/telegram-desktop ~amd64
 dev-python/python-evdev ~amd64
 media-sound/bluez-alsa ~amd64
-media-gfx/gimp ~amd64
 x11-misc/pywal ~amd64
 media-gfx/flameshot ~amd64
 app-misc/radeontop ~amd64
@@ -46,7 +45,11 @@ net-im/zoom ~amd64
 games-util/qjoypad ~amd64
 dev-vcs/gitstats ~amd64
 media-video/v4l2loopback ~amd64
-dev-qt/qtdiag ~amd64
+media-gfx/inkscape ~amd64
+x11-misc/rofi-calc ~amd64
+media-tv/droidcam ~amd64
+media-video/v4l2loopback ~amd64
+sys-kernel/linux-headers ~amd64
 
 # llvm/clang 8
 # <sys-devel/llvm-9 ~amd64
@@ -61,26 +64,14 @@ dev-qt/qtdiag ~amd64
 # live ebuilds
 =x11-wm/herbstluftwm-9999 **
 =games-action/multimc5-9999 **
-=media-sound/cava-9999 **
 =net-misc/youtube-dl-99999999 **
 =media-fonts/siji-9999 **
 =app-misc/neofetch-9999 **
-=app-forensics/snowman-9999 **
 
 # required by ohsnap (argument)
 =media-fonts/ohsnap-1.8.0 ~amd64
 # required by extreme-tuxracer (argument)
 =games-action/extreme-tuxracer-0.7.4 ~amd64
-# required by net-im/telegram-desktop-1.4.4::4nykey
-# required by telegram-desktop (argument)
-dev-cpp/range-v3 ~amd64
-# move dev-libs/range-v3 dev-cpp/range-v3
-dev-cpp/range-v3 ~amd64
-# required by media-gfx/gimp-2.10.8::gentoo
-# required by @selected
-# required by @world (argument)
-media-libs/gegl ~amd64
-
 # required by net-im/telegram-desktop-1.8.15::4nykey
 # required by @selected
 # required by @world (argument)

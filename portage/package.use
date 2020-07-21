@@ -1,14 +1,14 @@
+sys-devel/gcc graphite lto pgo
 net-misc/iputils -caps -filecaps
 sys-libs/pam -filecaps
 sys-apps/util-linux static-libs
 sys-kernel/gentoo-sources symlink
-net-misc/networkmanager ppp
 sys-fs/cryptsetup -gcrypt -nettle -kernel openssl
 sys-libs/ncurses -gpm -tinfo threads
 app-admin/sudo -sendmail -sasl -ldap
 app-editors/vim terminal
 sys-libs/zlib minizip
-www-client/ungoogled-chromium optimize-webui optimize-thinlto pdf pulseaudio system-ffmpeg system-harfbuzz system-icu system-jsoncpp system-libevent system-libvpx system-openh264 system-openjpeg proprietary-codecs thinlto python_targets_python3_7 -python_targets_python3_6 -vaapi -vdpau
+www-client/ungoogled-chromium optimize-webui optimize-thinlto pulseaudio system-ffmpeg system-harfbuzz system-icu system-jsoncpp system-libevent system-libvpx system-openh264 system-openjpeg proprietary-codecs thinlto ozone -vaapi -vdpau # cfi not working for now, vaapi and vdpau need inexistent patches, custom-flags causes bugs (like moving tabs -> crash?)
 media-sound/pulseaudio equalizer -qt5
 sys-block/gparted fat ntfs
 app-arch/p7zip -wxwidgets rar
@@ -37,21 +37,47 @@ dev-libs/libnatspec python_single_target_python2_7
 media-libs/libcaca python_single_target_python2_7
 dev-lang/yasm python_single_target_python2_7
 
-# python3.7 stuff
-app-office/libreoffice-bin python_single_target_python3_7
-
 # steam stuff
+app-arch/bzip2 abi_x86_32
 dev-db/sqlite abi_x86_32
+dev-libs/atk abi_x86_32
 dev-libs/expat abi_x86_32
+dev-libs/fribidi abi_x86_32
 dev-libs/glib abi_x86_32
+dev-libs/gmp abi_x86_32
+dev-libs/icu abi_x86_32
+dev-libs/libcroco abi_x86_32
 dev-libs/libffi abi_x86_32
+dev-libs/libpcre abi_x86_32
+dev-libs/libtasn1 abi_x86_32
+dev-libs/libunistring abi_x86_32
+dev-libs/libxml2 abi_x86_32
+dev-libs/lzo abi_x86_32
+dev-libs/nettle abi_x86_32
 dev-libs/nspr abi_x86_32
 dev-libs/nss abi_x86_32
+dev-libs/openssl abi_x86_32
 dev-util/pkgconfig abi_x86_32
+gnome-base/librsvg abi_x86_32
+media-gfx/graphite2 abi_x86_32
+media-libs/fontconfig abi_x86_32
+media-libs/freetype abi_x86_32
+media-libs/harfbuzz abi_x86_32
+media-libs/libpng abi_x86_32
 media-libs/mesa abi_x86_32
 media-libs/openal abi_x86_32
+media-libs/tiff abi_x86_32
+net-dns/libidn2 abi_x86_32
+net-libs/gnutls abi_x86_32
 net-misc/curl abi_x86_32
+net-nds/openldap abi_x86_32
+net-print/cups abi_x86_32
+sys-apps/attr abi_x86_32
+sys-apps/dbus abi_x86_32
+sys-apps/util-linux abi_x86_32
+sys-devel/gettext abi_x86_32
 sys-devel/llvm abi_x86_32
+sys-libs/binutils-libs abi_x86_32
 sys-libs/gpm abi_x86_32
 sys-libs/ncurses abi_x86_32
 sys-libs/readline abi_x86_32
@@ -59,24 +85,30 @@ sys-libs/zlib abi_x86_32
 virtual/libffi abi_x86_32
 virtual/libiconv abi_x86_32
 virtual/libudev abi_x86_32
-virtual/pkgconfig abi_x86_32
+x11-libs/cairo abi_x86_32
 x11-libs/gdk-pixbuf abi_x86_32
 x11-libs/gtk+:2 abi_x86_32
-x11-libs/libdrm abi_x86_32
-x11-libs/libpciaccess abi_x86_32
 x11-libs/libX11 abi_x86_32
+x11-libs/libXScrnSaver abi_x86_32
 x11-libs/libXau abi_x86_32
-x11-libs/libxcb abi_x86_32
+x11-libs/libXcomposite abi_x86_32
+x11-libs/libXcursor abi_x86_32
 x11-libs/libXdamage abi_x86_32
 x11-libs/libXdmcp abi_x86_32
 x11-libs/libXext abi_x86_32
 x11-libs/libXfixes abi_x86_32
-x11-libs/libXScrnSaver abi_x86_32
-x11-libs/libxshmfence abi_x86_32
+x11-libs/libXft abi_x86_32
+x11-libs/libXi abi_x86_32
+x11-libs/libXinerama abi_x86_32
+x11-libs/libXrandr abi_x86_32
+x11-libs/libXrender abi_x86_32
 x11-libs/libXxf86vm abi_x86_32
-# move x11-proto/xcb-proto x11-base/xcb-proto
-x11-base/xcb-proto abi_x86_32
-
+x11-libs/libdrm abi_x86_32
+x11-libs/libpciaccess abi_x86_32
+x11-libs/libxcb abi_x86_32
+x11-libs/libxshmfence abi_x86_32
+x11-libs/pango abi_x86_32
+x11-libs/pixman abi_x86_32
 
 # WINE stuff
 media-libs/gstreamer abi_x86_32
@@ -103,7 +135,6 @@ media-libs/x264 abi_x86_32
 media-libs/libdvdnav abi_x86_32
 media-libs/libdvdread abi_x86_32
 media-libs/gst-plugins-bad abi_x86_32
-media-plugins/gst-plugins-gtk abi_x86_32
 dev-lang/orc abi_x86_32
 x11-libs/gtk+ abi_x86_32
 media-libs/libepoxy abi_x86_32
@@ -149,7 +180,6 @@ media-libs/x264 abi_x86_32
 media-libs/libdvdnav abi_x86_32
 media-libs/libdvdread abi_x86_32
 media-libs/gst-plugins-bad abi_x86_32
-media-plugins/gst-plugins-gtk abi_x86_32
 dev-lang/orc abi_x86_32
 x11-libs/gtk+ abi_x86_32
 media-libs/libepoxy abi_x86_32
@@ -1044,7 +1074,24 @@ media-libs/libwebp abi_x86_32
 # required by @selected
 # required by @world (argument)
 >=app-arch/xz-utils-5.2.4-r2 static-libs
-# required by www-client/ungoogled-chromium-80.0.3987.163_p1::pf4public[system-libvpx]
+# required by dev-python/PyQtWebEngine-5.14.0::gentoo
+# required by app-misc/anki-2.1.15::gentoo[python_single_target_python3_7]
 # required by @selected
 # required by @world (argument)
->=media-libs/libvpx-1.7.0-r1 postproc
+>=dev-python/PyQt5-sip-4.19.22 python_targets_python3_6
+# required by dev-python/PyQtWebEngine-5.14.0::gentoo
+# required by app-misc/anki-2.1.15::gentoo[python_single_target_python3_7]
+# required by @selected
+# required by @world (argument)
+>=dev-python/sip-4.19.22 python_targets_python3_6
+# required by dev-python/PyQt5-5.14.2::gentoo[dbus]
+# required by dev-python/PyQtWebEngine-5.14.0::gentoo
+# required by app-misc/anki-2.1.15::gentoo[python_single_target_python3_7]
+# required by @selected
+# required by @world (argument)
+>=dev-python/dbus-python-1.2.16 python_targets_python3_6
+# required by media-video/ffmpeg-4.3-r1::gentoo[dav1d]
+# required by net-im/telegram-desktop-2.1.16::gentoo
+# required by @selected
+# required by @world (argument)
+>=media-libs/dav1d-0.5.2 abi_x86_32

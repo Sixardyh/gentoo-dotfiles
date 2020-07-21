@@ -2,4 +2,6 @@
 */*::pg_overlay
 games-action/multimc5::vampire
 app-misc/anki::crocket-overlay
+sys-apps/file::tgbugs-overlay
+dev-dotnet/gtk-sharp::fkmclane
 
