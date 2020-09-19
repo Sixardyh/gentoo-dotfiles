@@ -6,12 +6,16 @@ LIST_FILES="
   $HOME/.config/herbstluftwm/
   /etc/portage/
   /usr/local/portage/profiles/
+  /proc/config.gz
+  $HOME/.vimrc
 "
 
 for f in $LIST_FILES ; do
   # hardcoded exceptions
   if [ "$f" = "/usr/local/portage/profiles/" ] ; then
     cp -r "$f" custom_profiles
+  elif [ "$f" = "/proc/config.gz" ] ; then
+    zcat "$f" > kernel."$(uname -r)".config
   else
     cp -r "$f" .
   fi

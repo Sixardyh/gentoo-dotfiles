@@ -8,7 +8,7 @@ sys-libs/ncurses -gpm -tinfo threads
 app-admin/sudo -sendmail -sasl -ldap
 app-editors/vim terminal
 sys-libs/zlib minizip
-www-client/ungoogled-chromium optimize-webui optimize-thinlto pulseaudio system-ffmpeg system-harfbuzz system-icu system-jsoncpp system-libevent system-libvpx system-openh264 system-openjpeg proprietary-codecs thinlto ozone -vaapi -vdpau # cfi not working for now, vaapi and vdpau need inexistent patches, custom-flags causes bugs (like moving tabs -> crash?)
+www-client/ungoogled-chromium optimize-webui optimize-thinlto pulseaudio system-ffmpeg system-harfbuzz system-icu system-jsoncpp system-libevent -system-libvpx system-openh264 system-openjpeg proprietary-codecs thinlto custom-cflags -ozone -cfi -vaapi -vdpau # cfi not working for now, vaapi and vdpau need inexistant patches, temp disabled system-libvpx because of update thingy 1.8)
 media-sound/pulseaudio equalizer -qt5
 sys-block/gparted fat ntfs
 app-arch/p7zip -wxwidgets rar
@@ -29,6 +29,7 @@ app-emulation/wine-staging abi_x86_32 osmesa vulkan vaapi vkd3d -gecko
 virtual/wine staging abi_x86_32
 app-emulation/qemu usbredir
 dev-qt/qtgui -wayland
+media-libs/libvpx postproc
 
 # python2.7 stuff
 media-gfx/gimp python_single_target_python2_7
@@ -46,7 +47,7 @@ dev-libs/fribidi abi_x86_32
 dev-libs/glib abi_x86_32
 dev-libs/gmp abi_x86_32
 dev-libs/icu abi_x86_32
-dev-libs/libcroco abi_x86_32
+# dev-libs/libcroco abi_x86_32
 dev-libs/libffi abi_x86_32
 dev-libs/libpcre abi_x86_32
 dev-libs/libtasn1 abi_x86_32
@@ -1095,3 +1096,23 @@ media-libs/libwebp abi_x86_32
 # required by @selected
 # required by @world (argument)
 >=media-libs/dav1d-0.5.2 abi_x86_32
+# required by net-im/telegram-desktop-2.2.0-r1::gentoo
+# required by @selected
+# required by @world (argument)
+>=dev-qt/qtgui-5.14.2 wayland
+# required by net-misc/curl-7.71.1::gentoo[http2]
+# required by media-sound/musikcube-0.93.1::casca
+# required by @selected
+# required by @world (argument)
+>=net-libs/nghttp2-1.41.0 abi_x86_32
+# required by gnome-base/librsvg-2.48.8::gentoo
+# required by media-gfx/gimp-2.10.18-r1::gentoo
+# required by @selected
+# required by @world (argument)
+>=virtual/rust-1.45.2 abi_x86_32
+# required by virtual/rust-1.45.2::gentoo
+# required by gnome-base/librsvg-2.48.8::gentoo
+# required by media-gfx/gimp-2.10.18-r1::gentoo
+# required by @selected
+# required by @world (argument)
+>=dev-lang/rust-1.45.2 abi_x86_32

@@ -1,7 +1,7 @@
-=dev-libs/icu-58.2-r1
 */*::pg_overlay
 games-action/multimc5::vampire
 app-misc/anki::crocket-overlay
 sys-apps/file::tgbugs-overlay
-dev-dotnet/gtk-sharp::fkmclane
 
+# enable abi_x32 use flag if unmasked
+dev-libs/libcroco

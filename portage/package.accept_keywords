@@ -50,6 +50,7 @@ x11-misc/rofi-calc ~amd64
 media-tv/droidcam ~amd64
 media-video/v4l2loopback ~amd64
 sys-kernel/linux-headers ~amd64
+media-libs/libvpx ~amd64
 
 # llvm/clang 8
 # <sys-devel/llvm-9 ~amd64
