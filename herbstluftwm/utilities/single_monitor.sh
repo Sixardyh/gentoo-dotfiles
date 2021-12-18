@@ -30,5 +30,5 @@ if [ "$a" == "" ]; then
 	herbstclient lock_tag two
 fi
 
-nitrogen --head=0 --set-zoom-fill /home/cyril/Pictures/papes/dual/bridge_boat.jpg
+nitrogen --head=0 --set-auto /home/cyril/Pictures/papes/under_bridge_asian.jpg
 

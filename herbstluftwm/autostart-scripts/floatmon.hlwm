@@ -7,7 +7,7 @@ a=$(herbstclient list_monitors | grep two)
 tag="flt"
 
 # change to match your resolution
-res="3968x1152"
+res="3072x2000"
 
 # change to match your padding
 pad="20 0 0 0"

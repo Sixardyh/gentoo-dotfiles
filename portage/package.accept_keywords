@@ -15,11 +15,8 @@ net-misc/streamlink ~amd64
 dev-util/bless ~amd64
 media-video/ffmpeg ~amd64
 games-util/gamemode ~amd64
-# games-util/lutris ~amd64
-=games-util/lutris-9999 **
 games-fps/xonotic ~amd64
 net-vpn/logmein-hamachi ~amd64
-www-client/ungoogled-chromium ~amd64
 dev-util/smem ~amd64
 net-im/discord-bin ~amd64
 www-misc/buku ~amd64
@@ -39,6 +36,7 @@ sci-misc/labview ~amd64
 app-emulation/wine-staging ~amd64
 app-emulation/wine-mono ~amd64
 app-emulation/winetricks ~amd64
+app-emulation/vkd3d ~amd64
 virtual/wine ~amd64
 dev-util/cmake ~amd64
 net-im/zoom ~amd64
@@ -51,29 +49,39 @@ media-tv/droidcam ~amd64
 media-video/v4l2loopback ~amd64
 sys-kernel/linux-headers ~amd64
 media-libs/libvpx ~amd64
-
-# llvm/clang 8
-# <sys-devel/llvm-9 ~amd64
-# <sys-devel/llvm-common-9 ~amd64
-# <sys-devel/clang-9 ~amd64
-# <sys-devel/clang-common-9 ~amd64
-# <sys-devel/clang-runtime-9 ~amd64
-# <sys-libs/compiler-rt-9 ~amd64
-# <sys-libs/compiler-rt-sanitizers-9 ~amd64
-# <sys-devel/lld-9 ~amd64
+dev-util/bless ~amd64
+net-misc/youtube-dl ~amd64
+games-util/lutris ~amd64
+app-text/cpdf ~amd64
+app-misc/piper ~amd64
+dev-libs/libratbag ~amd64
 
 # live ebuilds
 =x11-wm/herbstluftwm-9999 **
 =games-action/multimc5-9999 **
-=net-misc/youtube-dl-99999999 **
-=media-fonts/siji-9999 **
+=net-misc/youtube-dl-9999 **
+=media-fonts/siji-9999-r1 **
 =app-misc/neofetch-9999 **
+=net-im/chatterino2-9999 **
+# =games-util/lutris-9999 **
+
+# clang / llvm stuff
+# <sys-devel/clang-13 ~amd64
+# <sys-devel/clang-runtime-13 ~amd64
+# <sys-devel/clang-common-13 ~amd64
+# <sys-devel/llvm-13 ~amd64
+# <sys-devel/llvm-common-13 ~amd64
+# <sys-devel/lld-13 ~amd64
+# <sys-libs/compiler-rt-13 ~amd64
+# <sys-libs/compiler-rt-sanitizers-13 ~amd64
 
 # required by ohsnap (argument)
 =media-fonts/ohsnap-1.8.0 ~amd64
-# required by extreme-tuxracer (argument)
-=games-action/extreme-tuxracer-0.7.4 ~amd64
 # required by net-im/telegram-desktop-1.8.15::4nykey
 # required by @selected
 # required by @world (argument)
 media-libs/libtgvoip ~amd64
+media-libs/tg_owt ~amd64
+# required by cpdf
+=dev-ml/camlpdf-2.3.1 ~amd64
+

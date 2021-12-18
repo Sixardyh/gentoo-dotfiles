@@ -13,6 +13,7 @@ Plug 'Xuyuanp/nerdtree-git-plugin'
 Plug 'mhinz/vim-startify'
 Plug 'ajh17/VimCompletesMe'
 Plug 'vim-jp/vim-cpp'       "syntax highlighting for c and cpp
+Plug 'vim-python/python-syntax'       "syntax highlighting for python
 Plug 'vim-scripts/a.vim'
 Plug 'wesQ3/vim-windowswap'
 Plug 'reedes/vim-pencil'
@@ -93,16 +94,25 @@ augroup configgroup
     autocmd FileType c setlocal tabstop=8
     autocmd FileType c setlocal shiftwidth=8
     autocmd FileType c setlocal softtabstop=8
+    autocmd FileType c setlocal foldmethod=indent
+    autocmd FileType c setlocal foldlevel=0
     autocmd FileType cpp setlocal colorcolumn=87
     autocmd FileType python setlocal commentstring=#\ %s
+    autocmd FileType python let b:vcm_tab_complete = "python"
+    autocmd FileType python setlocal colorcolumn=87
     autocmd FileType tex call pencil#init({'wrap': 'soft'})
 
     autocmd BufEnter *.cls setlocal filetype=java
     autocmd BufEnter *.zsh-theme setlocal filetype=zsh
+    autocmd BufNewFile,BufRead /*.rasi setf css
     autocmd BufEnter Makefile setlocal noexpandtab
     autocmd BufEnter *.sh setlocal tabstop=2
     autocmd BufEnter *.sh setlocal shiftwidth=2
     autocmd BufEnter *.sh setlocal softtabstop=2
+    autocmd BufEnter *.asm ALEDisableBuffer
+    autocmd BufEnter *.asm setlocal tabstop=8
+    autocmd BufEnter *.asm setlocal shiftwidth=8
+    autocmd BufEnter *.asm setlocal softtabstop=8
     " clear all trailing whitespaces on save
     autocmd BufWritePre * %s/\s\+$//e
     autocmd ColorScheme gruvbox hi SpellBad cterm=Underline ctermfg=red
@@ -128,7 +138,7 @@ syntax enable
 " set writebackup
 
 " ale config
-let g:ale_python_flake8_options = '--ignore=E501,E722,F403,F405,W391'
+let g:ale_python_flake8_options = '--ignore=E701,E501,W391,E741,E722,W503,E129'
 let g:airline#extensions#ale#enabled = 1
 
 " GUI options
@@ -144,4 +154,7 @@ set noshowmode
 let g:ctrlp_match_window = 'bottom,order:ttb'
 let g:ctrlp_switch_buffer = 0
 let g:ctrlp_working_path_mode = 1
+
+" python-syntax settings
+let g:python_highlight_all = 1
 

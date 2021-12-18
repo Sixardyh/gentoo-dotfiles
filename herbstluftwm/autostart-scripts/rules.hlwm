@@ -29,7 +29,7 @@ fi
 {
     pids=( )
     # reserve some space for the panel on monitor 0
-    hc pad 0 20 "" ""
+    hc pad 1 20 "" ""
     # start the panel itself and remember its pid
     $panel &
     pids+=( $! )

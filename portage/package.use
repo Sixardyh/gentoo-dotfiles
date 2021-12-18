@@ -4,15 +4,14 @@ sys-libs/pam -filecaps
 sys-apps/util-linux static-libs
 sys-kernel/gentoo-sources symlink
 sys-fs/cryptsetup -gcrypt -nettle -kernel openssl
-sys-libs/ncurses -gpm -tinfo threads
+sys-libs/ncurses -gpm threads # -tinfo
 app-admin/sudo -sendmail -sasl -ldap
 app-editors/vim terminal
 sys-libs/zlib minizip
-www-client/ungoogled-chromium optimize-webui optimize-thinlto pulseaudio system-ffmpeg system-harfbuzz system-icu system-jsoncpp system-libevent -system-libvpx system-openh264 system-openjpeg proprietary-codecs thinlto custom-cflags -ozone -cfi -vaapi -vdpau # cfi not working for now, vaapi and vdpau need inexistant patches, temp disabled system-libvpx because of update thingy 1.8)
+www-client/ungoogled-chromium optimize-webui optimize-thinlto pulseaudio system-ffmpeg system-harfbuzz system-icu system-jsoncpp system-libevent system-openh264 system-openjpeg proprietary-codecs thinlto -system-libvpx custom-cflags pgo -cfi vaapi vdpau # cfi not working , vaapi and vdpau need inexistant patches
 media-sound/pulseaudio equalizer -qt5
-sys-block/gparted fat ntfs
 app-arch/p7zip -wxwidgets rar
-x11-wm/herbstluftwm examples
+x11-wm/herbstluftwm examples -doc
 xfce-base/thunar -trash-panel-plugin
 x11-misc/rofi windowmode
 >=media-libs/gexiv2-0.10.6 introspection
@@ -20,23 +19,206 @@ x11-misc/rofi windowmode
 app-text/texlive extra graphics humanities luatex science 
 x11-misc/polybar network
 media-libs/mesa d3d9
-dev-qt/qtwebengine jumbo-build
 media-video/ffmpeg chromium
 dev-lang/python tk
-media-gfx/inkscape postscript python_single_target_python2_7
+media-gfx/inkscape postscript
 dev-libs/boost tools
 app-emulation/wine-staging abi_x86_32 osmesa vulkan vaapi vkd3d -gecko
 virtual/wine staging abi_x86_32
 app-emulation/qemu usbredir
 dev-qt/qtgui -wayland
 media-libs/libvpx postproc
+media-video/mpv lua -lua_single_target_luajit
+x11-misc/nitrogen xinerama
+dev-qt/qtwebengine -jumbo-build # makes ram go boom
 
 # python2.7 stuff
-media-gfx/gimp python_single_target_python2_7
-net-print/cups python_single_target_python2_7
-dev-libs/libnatspec python_single_target_python2_7
-media-libs/libcaca python_single_target_python2_7
-dev-lang/yasm python_single_target_python2_7
+media-gfx/inkscape python_single_target_python2_7
+=dev-java/javatoolkit-0.3.0-r9 python_targets_python2_7
+# media-gfx/gimp python_single_target_python2_7
+# net-print/cups python_single_target_python2_7
+# dev-libs/libnatspec python_single_target_python2_7
+# media-libs/libcaca python_single_target_python2_7
+# dev-lang/yasm python_single_target_python2_7
+
+
+# older version of python3 stuff (cuz we switched to python9)
+<app-office/libreoffice-bin-6.5 python_single_target_python3_8
+<net-fs/samba-4.13 python_single_target_python3_8
+<media-libs/alsa-lib-1.2.4 python_single_target_python3_8
+<dev-libs/gobject-introspection-1.65 python_single_target_python3_8
+<sys-libs/ldb-2.2 python_single_target_python3_8
+<x11-wm/openbox-3.6.2 python_single_target_python3_8
+<dev-libs/libixion-0.15.1 python_single_target_python3_8
+
+<sys-libs/libseccomp-2.6 static-libs 	# required by python useflag
+
+<dev-python/six-1.17 python_targets_python3_8
+<dev-python/cryptography-3.5 python_targets_python3_8
+<dev-python/cffi-1.16 python_targets_python3_8
+<dev-python/pycparser-2.21 python_targets_python3_8
+<dev-python/ply-3.12 python_targets_python3_8
+<dev-python/requests-2.25.2 python_targets_python3_8
+<dev-python/idna-3.3 python_targets_python3_8
+<dev-python/pyparsing-2.5 python_targets_python3_8
+<dev-python/dbus-python-1.2.17 python_targets_python3_8
+<dev-python/urllib3-1.27 python_targets_python3_8
+<dev-python/webencodings-0.5.2 python_targets_python3_8
+<dev-python/chardet-4.0.1 python_targets_python3_8
+<dev-python/cython-0.30 python_targets_python3_8
+<dev-python/lxml-4.7 python_targets_python3_8
+<dev-python/html5lib-1.2 python_targets_python3_8
+<dev-python/PySocks-1.7.2 python_targets_python3_8
+<dev-python/pyopenssl-20.0.2 python_targets_python3_8
+<sys-apps/util-linux-2.36 python_targets_python3_8
+<dev-python/ntlm-auth-1.6 python_targets_python3_8
+<x11-misc/arandr-0.2 python_targets_python3_8
+<sys-libs/libcap-ng-0.8 python_targets_python3_8
+<dev-libs/libbytesize-2.4 python_targets_python3_8
+<x11-base/xcb-proto-1.15 python_targets_python3_8
+<dev-python/pygobject-3.43 python_targets_python3_8
+<dev-python/docutils-0.18 python_targets_python3_8
+<dev-python/setuptools-60 python_targets_python3_8
+<dev-python/setuptools_scm-6.4 python_targets_python3_8
+<dev-python/pygments-2.11 python_targets_python3_8
+<dev-python/pycairo-1.21 python_targets_python3_8
+<dev-python/soupsieve-2.3 python_targets_python3_8
+<dev-python/markdown-3.4 python_targets_python3_8
+<dev-python/jsonpointer-2.2 python_targets_python3_8
+<dev-python/regex-2021.4.5 python_targets_python3_8
+<dev-python/zope-interface-5.4 python_targets_python3_8
+<dev-python/rfc3339-validator-0.1.4 python_targets_python3_8
+<dev-python/decorator-5.1 python_targets_python3_8
+<dev-python/httplib2-0.20 python_targets_python3_8
+<dev-python/toml-0.11 python_targets_python3_8
+<dev-python/packaging-22.0 python_targets_python3_8
+<dev-python/tomli-1.3 python_targets_python3_8
+
+# ruby stuff
+# required by dev-lang/ruby-2.7.4::gentoo
+# required by dev-ruby/rubygems-3.1.6::gentoo[ruby_targets_ruby27]
+# required by virtual/rubygems-16::gentoo[ruby_targets_ruby27]
+# required by dev-ruby/rdoc-6.3.2::gentoo[-test,ruby_targets_ruby27]
+# required by dev-ruby/bundler-2.1.4::gentoo[ruby_targets_ruby26,doc]
+# required by dev-lang/ruby-2.6.8::gentoo
+# required by virtual/ruby-ssl-11::gentoo[ruby_targets_ruby26]
+# required by dev-ruby/racc-1.4.16-r1::gentoo[ruby_targets_ruby27]
+>=dev-ruby/minitest-5.13.0 ruby_targets_ruby27
+# required by dev-lang/ruby-2.7.4::gentoo
+# required by dev-ruby/rubygems-3.1.6::gentoo[ruby_targets_ruby27]
+# required by virtual/rubygems-16::gentoo[ruby_targets_ruby27]
+# required by dev-ruby/rdoc-6.3.2::gentoo[-test,ruby_targets_ruby27]
+# required by dev-ruby/bundler-2.1.4::gentoo[ruby_targets_ruby26,doc]
+# required by dev-lang/ruby-2.6.8::gentoo
+# required by virtual/ruby-ssl-11::gentoo[ruby_targets_ruby26]
+# required by dev-ruby/racc-1.4.16-r1::gentoo[ruby_targets_ruby27]
+>=dev-ruby/net-telnet-0.2.0 ruby_targets_ruby27
+# required by dev-lang/ruby-2.7.4::gentoo
+# required by dev-ruby/rubygems-3.1.6::gentoo[ruby_targets_ruby27]
+# required by virtual/rubygems-16::gentoo[ruby_targets_ruby27]
+# required by dev-ruby/rdoc-6.3.2::gentoo[-test,ruby_targets_ruby27]
+# required by dev-ruby/bundler-2.1.4::gentoo[ruby_targets_ruby26,doc]
+# required by dev-lang/ruby-2.6.8::gentoo
+# required by virtual/ruby-ssl-11::gentoo[ruby_targets_ruby26]
+# required by dev-ruby/racc-1.4.16-r1::gentoo[ruby_targets_ruby27]
+>=dev-ruby/power_assert-1.1.7 ruby_targets_ruby27
+# required by dev-lang/ruby-2.7.4::gentoo
+# required by dev-ruby/rubygems-3.1.6::gentoo[ruby_targets_ruby27]
+# required by virtual/rubygems-16::gentoo[ruby_targets_ruby27]
+# required by dev-ruby/rdoc-6.3.2::gentoo[-test,ruby_targets_ruby27]
+# required by dev-ruby/bundler-2.1.4::gentoo[ruby_targets_ruby26,doc]
+# required by dev-lang/ruby-2.6.8::gentoo
+# required by virtual/ruby-ssl-11::gentoo[ruby_targets_ruby26]
+# required by dev-ruby/racc-1.4.16-r1::gentoo[ruby_targets_ruby27]
+>=dev-ruby/rake-13.0.3-r1 ruby_targets_ruby27
+# required by dev-lang/ruby-2.7.4::gentoo
+# required by dev-ruby/rubygems-3.1.6::gentoo[ruby_targets_ruby27]
+# required by virtual/rubygems-16::gentoo[ruby_targets_ruby27]
+# required by dev-ruby/rdoc-6.3.2::gentoo[-test,ruby_targets_ruby27]
+# required by dev-ruby/bundler-2.1.4::gentoo[ruby_targets_ruby26,doc]
+# required by dev-lang/ruby-2.6.8::gentoo
+# required by virtual/ruby-ssl-11::gentoo[ruby_targets_ruby26]
+# required by dev-ruby/racc-1.4.16-r1::gentoo[ruby_targets_ruby27]
+>=dev-ruby/test-unit-3.3.9 ruby_targets_ruby27
+# required by dev-lang/ruby-2.7.4::gentoo
+# required by dev-ruby/rubygems-3.1.6::gentoo[ruby_targets_ruby27]
+# required by virtual/rubygems-16::gentoo[ruby_targets_ruby27]
+# required by dev-ruby/rdoc-6.3.2::gentoo[-test,ruby_targets_ruby27]
+# required by dev-ruby/bundler-2.1.4::gentoo[ruby_targets_ruby26,doc]
+# required by dev-lang/ruby-2.6.8::gentoo
+# required by virtual/ruby-ssl-11::gentoo[ruby_targets_ruby26]
+# required by dev-ruby/racc-1.4.16-r1::gentoo[ruby_targets_ruby27]
+>=dev-ruby/xmlrpc-0.3.0 ruby_targets_ruby27
+# required by dev-lang/ruby-2.7.4::gentoo
+# required by dev-ruby/rubygems-3.1.6::gentoo[ruby_targets_ruby27]
+# required by virtual/rubygems-16::gentoo[ruby_targets_ruby27]
+# required by dev-ruby/rdoc-6.3.2::gentoo[-test,ruby_targets_ruby27]
+# required by dev-lang/ruby-2.6.8::gentoo[rdoc]
+# required by virtual/ruby-ssl-11::gentoo[ruby_targets_ruby26]
+# required by dev-ruby/racc-1.4.16-r1::gentoo[ruby_targets_ruby27]
+>=dev-ruby/bundler-2.1.4 ruby_targets_ruby27
+# required by dev-lang/ruby-2.7.4::gentoo
+# required by dev-ruby/rubygems-3.1.6::gentoo[ruby_targets_ruby27]
+# required by virtual/rubygems-16::gentoo[ruby_targets_ruby27]
+# required by dev-ruby/rdoc-6.3.2::gentoo[-test,ruby_targets_ruby27]
+# required by dev-ruby/bundler-2.1.4::gentoo[ruby_targets_ruby26,doc]
+# required by dev-lang/ruby-2.6.8::gentoo
+# required by virtual/ruby-ssl-11::gentoo[ruby_targets_ruby26]
+# required by dev-ruby/racc-1.4.16-r1::gentoo[ruby_targets_ruby27]
+>=dev-ruby/did_you_mean-1.4.0 ruby_targets_ruby27
+# required by dev-lang/ruby-2.7.4::gentoo
+# required by dev-ruby/rubygems-3.1.6::gentoo[ruby_targets_ruby27]
+# required by virtual/rubygems-16::gentoo[ruby_targets_ruby27]
+# required by dev-ruby/rdoc-6.3.2::gentoo[-test,ruby_targets_ruby27]
+# required by dev-ruby/bundler-2.1.4::gentoo[ruby_targets_ruby26,doc]
+# required by dev-lang/ruby-2.6.8::gentoo
+# required by virtual/ruby-ssl-11::gentoo[ruby_targets_ruby26]
+# required by dev-ruby/racc-1.4.16-r1::gentoo[ruby_targets_ruby27]
+>=dev-ruby/json-2.3.0 ruby_targets_ruby27
+# required by dev-lang/ruby-2.7.4::gentoo[rdoc]
+# required by dev-ruby/rubygems-3.1.6::gentoo[ruby_targets_ruby27]
+# required by virtual/rubygems-16::gentoo[ruby_targets_ruby27]
+# required by dev-ruby/racc-1.4.16-r1::gentoo
+>=dev-ruby/rdoc-6.3.2 ruby_targets_ruby27
+# required by dev-ruby/rdoc-6.3.2::gentoo[ruby_targets_ruby27]
+# required by dev-ruby/bundler-2.1.4::gentoo[ruby_targets_ruby26,doc]
+# required by dev-lang/ruby-2.7.4::gentoo
+# required by dev-ruby/rubygems-3.1.6::gentoo[ruby_targets_ruby27]
+# required by virtual/rubygems-16::gentoo[ruby_targets_ruby27]
+# required by dev-ruby/racc-1.4.16-r1::gentoo
+>=dev-ruby/kpeg-1.1.0-r1 ruby_targets_ruby27
+# required by dev-ruby/rdoc-6.3.2::gentoo[ruby_targets_ruby27]
+# required by dev-ruby/bundler-2.1.4::gentoo[ruby_targets_ruby26,doc]
+# required by dev-lang/ruby-2.7.4::gentoo
+# required by dev-ruby/rubygems-3.1.6::gentoo[ruby_targets_ruby27]
+# required by virtual/rubygems-16::gentoo[ruby_targets_ruby27]
+# required by dev-ruby/kpeg-1.1.0-r1::gentoo[-test,ruby_targets_ruby27]
+>=dev-ruby/racc-1.4.16-r1 ruby_targets_ruby27
+# required by dev-ruby/racc-1.4.16-r1::gentoo[-test,ruby_targets_ruby27]
+# required by dev-ruby/rdoc-6.3.2::gentoo[ruby_targets_ruby27]
+# required by dev-ruby/bundler-2.1.4::gentoo[ruby_targets_ruby26,doc]
+# required by dev-lang/ruby-2.7.4::gentoo
+# required by dev-ruby/rubygems-3.1.6::gentoo[ruby_targets_ruby27]
+>=virtual/rubygems-16 ruby_targets_ruby27
+# required by virtual/rubygems-16::gentoo[ruby_targets_ruby27]
+# required by dev-lang/ruby-2.7.4::gentoo
+# required by virtual/ruby-ssl-11::gentoo[ruby_targets_ruby27]
+# required by dev-ruby/racc-1.4.16-r1::gentoo[ruby_targets_ruby27]
+# required by dev-ruby/rdoc-6.3.2::gentoo[ruby_targets_ruby27]
+# required by dev-ruby/bundler-2.1.4::gentoo[ruby_targets_ruby26,doc]
+# required by dev-lang/ruby-2.6.8::gentoo
+# required by dev-ruby/minitest-5.13.0::gentoo[ruby_targets_ruby26]
+>=dev-ruby/rubygems-3.1.6 ruby_targets_ruby27
+# required by dev-ruby/racc-1.4.16-r1::gentoo[ruby_targets_ruby27]
+# required by dev-ruby/rdoc-6.3.2::gentoo[ruby_targets_ruby27]
+# required by dev-ruby/bundler-2.1.4::gentoo[ruby_targets_ruby26,doc]
+# required by dev-lang/ruby-2.7.4::gentoo
+# required by dev-ruby/rubygems-3.1.6::gentoo[ruby_targets_ruby27]
+# required by virtual/rubygems-16::gentoo[ruby_targets_ruby27]
+# required by dev-ruby/kpeg-1.1.0-r1::gentoo[-test,ruby_targets_ruby27]
+>=virtual/ruby-ssl-11 ruby_targets_ruby27
+
+
 
 # steam stuff
 app-arch/bzip2 abi_x86_32
@@ -58,7 +240,6 @@ dev-libs/nettle abi_x86_32
 dev-libs/nspr abi_x86_32
 dev-libs/nss abi_x86_32
 dev-libs/openssl abi_x86_32
-dev-util/pkgconfig abi_x86_32
 gnome-base/librsvg abi_x86_32
 media-gfx/graphite2 abi_x86_32
 media-libs/fontconfig abi_x86_32
@@ -83,7 +264,7 @@ sys-libs/gpm abi_x86_32
 sys-libs/ncurses abi_x86_32
 sys-libs/readline abi_x86_32
 sys-libs/zlib abi_x86_32
-virtual/libffi abi_x86_32
+# virtual/libffi abi_x86_32
 virtual/libiconv abi_x86_32
 virtual/libudev abi_x86_32
 x11-libs/cairo abi_x86_32
@@ -292,12 +473,6 @@ media-libs/glu abi_x86_32
 # required by virtual/jdk-1.8.0-r3::gentoo
 # required by dev-java/icedtea-sound-1.0.1::gentoo
 >=sys-apps/dbus-1.10.24 abi_x86_32
-# required by media-video/ffmpeg-3.3.6::gentoo[truetype]
-# required by virtual/ffmpeg-9-r2::gentoo[-libav]
-# required by net-misc/streamlink-0.14.2-r1::gentoo
-# required by @selected
-# required by @world (argument)
->=media-libs/freetype-2.9.1-r3 abi_x86_32
 # required by sys-apps/systemd-239-r3::gentoo
 # required by virtual/libudev-232::gentoo
 # required by dev-qt/qtgui-5.11.3::gentoo[udev]
@@ -1036,15 +1211,6 @@ media-libs/libwebp abi_x86_32
 # required by @system
 # required by @world (argument)
 >=virtual/libcrypt-1 abi_x86_32
-# required by app-misc/anki-2.1.13-r1::gentoo[python_single_target_python3_6]
-# required by @selected
-# required by @world (argument)
->=dev-python/PyQtWebEngine-5.13.2 python_targets_python3_6
-# required by dev-python/PyQtWebEngine-5.13.2::gentoo
-# required by app-misc/anki-2.1.13-r1::gentoo[python_single_target_python3_6]
-# required by @selected
-# required by @world (argument)
->=dev-python/PyQt5-5.13.2 webchannel python_targets_python3_6
 # required by sys-boot/woeusb-3.3.0::gentoo
 # required by woeusb (argument)
 >=sys-boot/grub-2.04-r1 grub_platforms_pc
@@ -1075,22 +1241,6 @@ media-libs/libwebp abi_x86_32
 # required by @selected
 # required by @world (argument)
 >=app-arch/xz-utils-5.2.4-r2 static-libs
-# required by dev-python/PyQtWebEngine-5.14.0::gentoo
-# required by app-misc/anki-2.1.15::gentoo[python_single_target_python3_7]
-# required by @selected
-# required by @world (argument)
->=dev-python/PyQt5-sip-4.19.22 python_targets_python3_6
-# required by dev-python/PyQtWebEngine-5.14.0::gentoo
-# required by app-misc/anki-2.1.15::gentoo[python_single_target_python3_7]
-# required by @selected
-# required by @world (argument)
->=dev-python/sip-4.19.22 python_targets_python3_6
-# required by dev-python/PyQt5-5.14.2::gentoo[dbus]
-# required by dev-python/PyQtWebEngine-5.14.0::gentoo
-# required by app-misc/anki-2.1.15::gentoo[python_single_target_python3_7]
-# required by @selected
-# required by @world (argument)
->=dev-python/dbus-python-1.2.16 python_targets_python3_6
 # required by media-video/ffmpeg-4.3-r1::gentoo[dav1d]
 # required by net-im/telegram-desktop-2.1.16::gentoo
 # required by @selected
@@ -1116,3 +1266,62 @@ media-libs/libwebp abi_x86_32
 # required by @selected
 # required by @world (argument)
 >=dev-lang/rust-1.45.2 abi_x86_32
+# required by virtual/jpeg-100::gentoo
+# required by media-gfx/imagemagick-7.0.10.34-r1::gentoo
+# required by app-misc/neofetch-9999::gentoo[X]
+# required by @selected
+# required by @world (argument)
+>=media-libs/jpeg-9d abi_x86_32
+# required by dev-python/python-magic-0.4.18::gentoo
+# required by games-util/lutris-9999::gentoo[python_single_target_python3_7]
+sys-apps/file -python
+
+# required by sys-libs/libunwind-1.5.0::gentoo[zlib]
+# required by app-emulation/wine-staging-6.0::gentoo[unwind]
+# required by virtual/wine-0-r7::gentoo
+# required by @selected
+# required by @world (argument)
+>=sys-libs/zlib-1.2.11-r3 static-libs
+# required by dev-python/PyQtWebEngine-5.15.2::gentoo
+# required by app-misc/anki-2.1.15::gentoo[python_single_target_python3_7]
+# required by @selected
+# required by @world (argument)
+>=dev-python/PyQt5-5.15.2 webchannel
+
+# required by sys-fs/udisks-2.9.1-r2::gentoo
+# required by app-emulation/wine-staging-6.14::gentoo[udisks]
+# required by virtual/wine-0-r7::gentoo
+# required by @selected
+# required by @world (argument)
+=sys-libs/libblockdev-2.25 cryptsetup
+
+# required by x11-libs/pango-1.48.7::gentoo
+# required by app-office/libreoffice-bin-7.1.3.2::gentoo[-kde]
+# required by @selected
+# required by @world (argument)
+<media-libs/freetype-2.12 harfbuzz
+
+# required by media-sound/pulseaudio-15.0-r1::gentoo
+# required by app-emulation/qemu-6.0.0-r54::gentoo[-static,pulseaudio]
+# required by @selected
+# required by @world (argument)
+>=media-libs/speexdsp-1.2.0 abi_x86_32
+# required by virtual/libcrypt-2::gentoo
+# required by sys-apps/shadow-4.9-r3::gentoo
+# required by @system
+# required by @world (argument)
+>=sys-libs/libxcrypt-4.4.25 abi_x86_32
+
+# required by dev-python/cryptography-3.4.7-r2::gentoo[python_targets_python3_8,python_targets_python3_9]
+# required by @__auto_slot_operator_replace_installed__ (argument)
+# required by dev-ruby/xmlrpc-0.3.2-r1::gentoo[ruby_targets_ruby27]
+# required by dev-lang/ruby-2.6.8::gentoo
+# required by virtual/ruby-ssl-11::gentoo[ruby_targets_ruby26]
+# required by dev-ruby/racc-1.4.16-r1::gentoo
+# required by dev-ruby/rdoc-6.3.2::gentoo[ruby_targets_ruby27]
+# required by dev-ruby/bundler-2.1.4::gentoo[ruby_targets_ruby27,doc]
+# required by dev-lang/ruby-2.7.4::gentoo
+# required by app-editors/vim-8.2.3582::gentoo[ruby]
+# required by @selected
+# required by @world (argument)
+>=dev-ruby/webrick-1.7.0 ruby_targets_ruby27
