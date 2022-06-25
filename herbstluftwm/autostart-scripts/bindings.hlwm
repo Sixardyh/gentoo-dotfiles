@@ -18,7 +18,7 @@ hc keybind $Mod-$Alt-space spawn rofi -no-default-config -show run
 hc keybind Control-$Alt-Delete spawn $config/utilities/lock.sh
 hc keybind Shift-Control-$Alt-Delete spawn $config/utilities/locknsleep.sh
 hc keybind $Mod-Shift-f spawn $config/utilities/toggle_frame_borders.sh
-hc keybind Print spawn flameshot full -c
+hc keybind Print spawn flameshot full
 hc keybind Control-Print spawn flameshot screen -c
 hc keybind Shift-Print spawn flameshot gui
 hc keybind $Mod-Shift-t spawn $config/utilities/compositing.sh

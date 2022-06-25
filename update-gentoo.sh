@@ -107,8 +107,9 @@ emerge -q1 @preserved-rebuild --exclude "$EXCLUDED_PACKAGES"
 
 log "Running revdep-rebuild..."
 revdep-rebuild -qi
-log "Running eclean-dist..."
+log "Running eclean-dist... (with rm)"
 eclean-dist -qd
+rm /usr/portage/distfiles/* -rf
 log "Running dispatch-conf..."
 dispatch-conf
 argparse '--no-test-obsolete' || test_obsolete

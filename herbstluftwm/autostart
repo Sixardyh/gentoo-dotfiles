@@ -13,7 +13,7 @@ source $dir/bindings.hlwm
 
 
 # dual monitors
-# source $dir/dual_monitors.hlwm
+source $dir/dual_monitors.hlwm
 hc detect_monitors
 
 # floatmon

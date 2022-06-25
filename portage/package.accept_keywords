@@ -1,3 +1,8 @@
+app-crypt/eid-mw ~amd64
+app-text/fbpdf ~amd64
+games-action/multimc-bin ~amd64
+media-sound/cava ~amd64
+media-sound/pulseaudio-modules-bt ~amd64
 sys-kernel/gentoo-sources ~amd64
 media-libs/mesa ~amd64
 x11-terms/xfce4-terminal ~amd64
@@ -55,12 +60,11 @@ games-util/lutris ~amd64
 app-text/cpdf ~amd64
 app-misc/piper ~amd64
 dev-libs/libratbag ~amd64
+media-video/obs-studio ~amd64
 
 # live ebuilds
 =x11-wm/herbstluftwm-9999 **
-=games-action/multimc5-9999 **
 =net-misc/youtube-dl-9999 **
-=media-fonts/siji-9999-r1 **
 =app-misc/neofetch-9999 **
 =net-im/chatterino2-9999 **
 # =games-util/lutris-9999 **
@@ -82,6 +86,6 @@ dev-libs/libratbag ~amd64
 # required by @world (argument)
 media-libs/libtgvoip ~amd64
 media-libs/tg_owt ~amd64
+dev-libs/libdispatch ~amd64
 # required by cpdf
 =dev-ml/camlpdf-2.3.1 ~amd64
-
