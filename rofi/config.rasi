@@ -1,0 +1,117 @@
+configuration {
+    show-icons: true;
+    drun-icon-theme: "Arc";
+    sidebar-mode: true;
+    sort: true;
+    modi: "clipboard:greenclip print,drun,calc,run,window,file-browser,emoji:rofiemoji";
+}
+
+window {
+	font: 			"Unifont Sample Medium 13";
+	transparency: 		"real";
+	background-color:	#020519;
+}
+
+mainbox {
+	background-color:	#020519;
+}
+
+inputbar {
+	background-color: 	#0D1843;
+	padding: 		5px;
+	margin:			5px 5px 0 5px;
+}
+
+prompt {
+	background-color:	#0000;
+	text-color:		#FFCAD7;
+	padding:		0 3px 0 0;
+}
+
+entry {
+	background-color:	#0000;
+	text-color:		#FFCAD7;
+}
+
+case-indicator {
+	background-color:	#0000;
+}
+
+message {
+	background-color:	#0000;
+}
+
+textbox {
+	text-color:		#FFCAD7;
+	background-color:	#0D1843;
+	margin:			7px;
+	padding:		0 3px;
+}
+
+listview {
+	background-color:	#020519;
+	margin:			7px;
+	spacing:		0;
+}
+
+sidebar {
+    background-color:   #020519;
+    padding:    7px;
+}
+
+button normal {
+    background-color:   #273469;
+    text-color:     #FFCAD7;
+}
+
+button selected {
+    background-color:   #305596;
+    text-color:     #FFCAD7;
+}
+
+element {
+	padding:		3px;
+	text-color:		#FFCAD7;
+}
+
+element normal {
+	background-color:	#0D1843;
+}
+
+element alternate {
+	background-color:	#060C2E;
+}
+
+element selected {
+	background-color:	#305596;
+}
+
+element normal.urgent {
+	text-color:		#9D0C22;
+}
+
+element normal.active {
+	text-color:		#4D304F;
+}
+
+element alternate.urgent {
+	text-color:		#D70424;
+}
+
+element alternate.active {
+	text-color:		#5D405F;
+}
+
+element selected.urgent {
+	text-color:		#8B326A;
+}
+
+element selected.active {
+	text-color:		#642E50;
+}
+
+element-text, element-icon {
+    background-color: inherit;
+    text-color:       inherit;
+}
+

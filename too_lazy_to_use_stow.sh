@@ -8,6 +8,10 @@ LIST_FILES="
   /usr/local/portage/profiles/
   /proc/config.gz
   $HOME/.vimrc
+  $HOME/.config/polybar/
+  $HOME/.config/rofi
+  $HOME/.config/neofetch
+  $HOME/.config/dunst
 "
 
 for f in $LIST_FILES ; do

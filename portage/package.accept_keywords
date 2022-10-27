@@ -1,4 +1,5 @@
 app-crypt/eid-mw ~amd64
+dev-ruby/did_you_mean ~amd64
 app-text/fbpdf ~amd64
 games-action/multimc-bin ~amd64
 media-sound/cava ~amd64
@@ -38,10 +39,7 @@ virtual/jre ~amd64
 virtual/jdk ~amd64
 x11-themes/arc-theme ~amd64
 sci-misc/labview ~amd64
-app-emulation/wine-staging ~amd64
-app-emulation/wine-mono ~amd64
-app-emulation/winetricks ~amd64
-app-emulation/vkd3d ~amd64
+app-emulation/wine-staging ~amd64 app-emulation/wine-mono ~amd64 app-emulation/winetricks ~amd64 app-emulation/vkd3d ~amd64
 virtual/wine ~amd64
 dev-util/cmake ~amd64
 net-im/zoom ~amd64
