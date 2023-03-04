@@ -1,3 +1,6 @@
+sci-electronics/ghdl-bin ~amd64
+media-video/obs-v4l2sink ~amd64
+app-emulation/vmware-horizon-client ~amd64
 app-crypt/eid-mw ~amd64
 dev-ruby/did_you_mean ~amd64
 app-text/fbpdf ~amd64
@@ -24,7 +27,8 @@ games-util/gamemode ~amd64
 games-fps/xonotic ~amd64
 net-vpn/logmein-hamachi ~amd64
 dev-util/smem ~amd64
-net-im/discord-bin ~amd64
+# move net-im/discord-bin net-im/discord
+net-im/discord ~amd64
 www-misc/buku ~amd64
 media-video/simplescreenrecorder ~amd64
 games-util/steam-launcher ~amd64
@@ -39,7 +43,10 @@ virtual/jre ~amd64
 virtual/jdk ~amd64
 x11-themes/arc-theme ~amd64
 sci-misc/labview ~amd64
-app-emulation/wine-staging ~amd64 app-emulation/wine-mono ~amd64 app-emulation/winetricks ~amd64 app-emulation/vkd3d ~amd64
+app-emulation/wine-staging ~amd64
+app-emulation/wine-mono ~amd64
+app-emulation/winetricks ~amd64
+app-emulation/vkd3d ~amd64
 virtual/wine ~amd64
 dev-util/cmake ~amd64
 net-im/zoom ~amd64

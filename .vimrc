@@ -109,7 +109,7 @@ augroup configgroup
     autocmd BufEnter *.sh setlocal tabstop=2
     autocmd BufEnter *.sh setlocal shiftwidth=2
     autocmd BufEnter *.sh setlocal softtabstop=2
-    autocmd BufEnter *.asm ALEDisableBuffer
+    autocmd BufEnter *.asm setlocal ALEDisableBuffer
     autocmd BufEnter *.asm setlocal tabstop=8
     autocmd BufEnter *.asm setlocal shiftwidth=8
     autocmd BufEnter *.asm setlocal softtabstop=8
@@ -157,4 +157,14 @@ let g:ctrlp_working_path_mode = 1
 
 " python-syntax settings
 let g:python_highlight_all = 1
+
+" airline config
+let g:airline#extensions#tabline#enabled = 1
+let g:airline#extensions#tabline#show_splits = 0
+let g:airline#extensions#tabline#show_buffers = 0
+let g:airline#extensions#tabline#tab_nr_type = 2 " splits and tab number
+let g:airline#extensions#tabline#buffer_idx_mode = 1
+let g:airline#extensions#tabline#show_tab_type = 0
+let g:airline#extensions#scrollbar#enabled = 1
+let g:airline#extensions#tabline#tab_min_count = 2
 
