@@ -1,3 +1,4 @@
+sys-kernel/installkernel -*
 net-misc/remmina rdp vnc gvnc
 media-video/obs-studio v4l
 media-gfx/imagemagick raw
@@ -24,7 +25,7 @@ x11-misc/rofi windowmode
 app-text/texlive extra graphics humanities luatex science
 x11-misc/polybar network
 media-libs/mesa d3d9
-media-video/ffmpeg chromium x265 hardcoded-tables
+media-video/ffmpeg chromium x265 hardcoded-tables vpx
 dev-lang/python tk
 media-gfx/inkscape postscript
 dev-libs/boost tools
@@ -32,249 +33,12 @@ app-emulation/wine-staging abi_x86_32 osmesa vulkan -gecko
 virtual/wine staging abi_x86_32
 app-emulation/qemu usbredir
 dev-qt/qtgui -wayland
-media-libs/libvpx postproc
+media-libs/libvpx postproc abi_x86_32
 media-video/mpv lua -lua_single_target_luajit
 x11-misc/nitrogen xinerama
-dev-qt/qtwebengine -jumbo-build # makes ram go boom
 media-video/obs-studio browser
 
-# python2.7 stuff
-# media-gfx/inkscape python_single_target_python2_7
-# =dev-java/javatoolkit-0.3.0-r9 python_targets_python2_7
-
-
-
-# media-gfx/gimp python_single_target_python2_7
-# net-print/cups python_single_target_python2_7
-# dev-libs/libnatspec python_single_target_python2_7
-# media-libs/libcaca python_single_target_python2_7
-# dev-lang/yasm python_single_target_python2_7
-
-
 <sys-libs/libseccomp-2.6 static-libs 	# required by python useflag
-
-# python3 stuff
-<dev-python/autocommand-2.3 python_targets_python3_9
-<dev-python/inflect-7 python_targets_python3_9
-<dev-python/pydantic-1.11 python_targets_python3_9
-<dev-python/more-itertools-10.0 python_targets_python3_9
-<x11-misc/pywal-3.3.1 python_targets_python3_9
-<dev-python/setuptools-66 python_targets_python3_9
-<dev-python/appdirs-1.5 python_targets_python3_9
-<dev-python/jaraco-text-3.12.0 python_targets_python3_9
-<dev-python/nspektr-0.5.0 python_targets_python3_9
-<dev-python/ordered-set-4.2.0 python_targets_python3_9
-<dev-python/packaging-21.4 python_targets_python3_9
-<dev-python/tomli-2.1 python_targets_python3_9
-<dev-python/importlib_metadata-6.0 python_targets_python3_9
-<dev-python/certifi-3021.4 python_targets_python3_9
-<dev-python/setuptools_scm-8 python_targets_python3_9
-<dev-python/wheel-0.39 python_targets_python3_9
-<dev-python/gpep517-14 python_targets_python3_9
-<dev-python/zipp-3.12 python_targets_python3_9
-<dev-python/flit_core-3.9 python_targets_python3_9
-<dev-python/jaraco-context-4.3 python_targets_python3_9
-<dev-python/jaraco-functools-3.6 python_targets_python3_9
-<dev-python/installer-0.7 python_targets_python3_9
-<dev-python/pyparsing-3.1 python_targets_python3_9
-<dev-python/typing-extensions-4.4 python_targets_python3_9
-<dev-python/cython-0.30 python_targets_python3_9
-
-
-
-
-# older version of python3 stuff (cuz we switched to python9) (hopefully not needed anymore?)
-# <app-office/libreoffice-bin-6.5 python_single_target_python3_8
-# <net-fs/samba-4.13 python_single_target_python3_8
-# <media-libs/alsa-lib-1.2.4 python_single_target_python3_8
-# <dev-libs/gobject-introspection-1.65 python_single_target_python3_8
-# <sys-libs/ldb-2.2 python_single_target_python3_8
-# <x11-wm/openbox-3.6.2 python_single_target_python3_8
-# <dev-libs/libixion-0.15.1 python_single_target_python3_8
-# <dev-python/six-1.17 python_targets_python3_8
-# <dev-python/cryptography-38 python_targets_python3_8
-# <dev-python/cffi-1.16 python_targets_python3_8
-# <dev-python/pycparser-2.22 python_targets_python3_8
-# <dev-python/ply-3.12 python_targets_python3_8
-# <dev-python/requests-2.25.2 python_targets_python3_8
-# <dev-python/idna-3.3 python_targets_python3_8
-# <dev-python/pyparsing-3.1 python_targets_python3_8
-# <dev-python/dbus-python-1.2.17 python_targets_python3_8
-# <dev-python/urllib3-1.27 python_targets_python3_8
-# <dev-python/webencodings-0.5.2 python_targets_python3_8
-# <dev-python/chardet-4.0.1 python_targets_python3_8
-# <dev-python/lxml-4.7 python_targets_python3_8
-# <dev-python/html5lib-1.2 python_targets_python3_8
-# <dev-python/PySocks-1.7.2 python_targets_python3_8
-# <dev-python/pyopenssl-20.0.2 python_targets_python3_8
-# <sys-apps/util-linux-2.36 python_targets_python3_8
-# <dev-python/ntlm-auth-1.6 python_targets_python3_8
-# <x11-misc/arandr-0.2 python_targets_python3_8
-# <sys-libs/libcap-ng-0.8 python_targets_python3_8
-# <dev-libs/libbytesize-2.4 python_targets_python3_8
-# <x11-base/xcb-proto-1.15 python_targets_python3_8
-# <dev-python/pygobject-3.43 python_targets_python3_8
-# <dev-python/docutils-0.18 python_targets_python3_8
-# <dev-python/setuptools-63 python_targets_python3_8
-# <dev-python/setuptools_scm-6.5 python_targets_python3_8
-# <dev-python/setuptools-rust-1.4 python_targets_python3_8
-# <dev-python/semantic_version-2.11 python_targets_python3_8
-# <dev-python/typing-extensions-4.3 python_targets_python3_8
-# <dev-python/pygments-2.13 python_targets_python3_8
-# <dev-python/pycairo-1.22 python_targets_python3_8
-# <dev-python/soupsieve-2.3 python_targets_python3_8
-# <dev-python/markdown-3.4 python_targets_python3_8
-# <dev-python/jsonpointer-2.2 python_targets_python3_8
-# <dev-python/regex-2021.4.5 python_targets_python3_8
-# <dev-python/zope-interface-5.4 python_targets_python3_8
-# <dev-python/rfc3339-validator-0.1.4 python_targets_python3_8
-# <dev-python/decorator-5.1 python_targets_python3_8
-# <dev-python/httplib2-0.20 python_targets_python3_8
-# <dev-python/toml-0.11 python_targets_python3_8
-# <dev-python/packaging-22.0 python_targets_python3_8
-# <dev-python/tomli-2.2 python_targets_python3_8
-# <dev-python/zipp-3.9 python_targets_python3_8
-# <dev-python/importlib_metadata-4.12 python_targets_python3_8
-# <dev-python/importlib_resources-5.8 python_targets_python3_8
-# <dev-python/installer-1 python_targets_python3_8
-# <dev-python/flit_core-3.8 python_targets_python3_8
-# <dev-python/wheel-0.38 python_targets_python3_8
-# <dev-python/appdirs-1.5 python_targets_python3_8
-# <dev-python/jaraco-text-3.8 python_targets_python3_8
-# <dev-python/jaraco-context-4.2 python_targets_python3_8
-# <dev-python/jaraco-functools-3.6 python_targets_python3_8
-# <dev-python/ordered-set-5 python_targets_python3_8
-# <dev-python/gpep517-7 python_targets_python3_8
-# <dev-python/nspektr-0.4.0 python_targets_python3_8
-
-
-
-
-# ruby stuff
-# required by dev-lang/ruby-2.7.4::gentoo
-# required by dev-ruby/rubygems-3.1.6::gentoo[ruby_targets_ruby27]
-# required by virtual/rubygems-16::gentoo[ruby_targets_ruby27]
-# required by dev-ruby/rdoc-6.3.2::gentoo[-test,ruby_targets_ruby27]
-# required by dev-ruby/bundler-2.1.4::gentoo[ruby_targets_ruby26,doc]
-# required by dev-lang/ruby-2.6.8::gentoo
-# required by virtual/ruby-ssl-11::gentoo[ruby_targets_ruby26]
-# required by dev-ruby/racc-1.4.16-r1::gentoo[ruby_targets_ruby27]
->=dev-ruby/minitest-5.13.0 ruby_targets_ruby27
-# required by dev-lang/ruby-2.7.4::gentoo
-# required by dev-ruby/rubygems-3.1.6::gentoo[ruby_targets_ruby27]
-# required by virtual/rubygems-16::gentoo[ruby_targets_ruby27]
-# required by dev-ruby/rdoc-6.3.2::gentoo[-test,ruby_targets_ruby27]
-# required by dev-ruby/bundler-2.1.4::gentoo[ruby_targets_ruby26,doc]
-# required by dev-lang/ruby-2.6.8::gentoo
-# required by virtual/ruby-ssl-11::gentoo[ruby_targets_ruby26]
-# required by dev-ruby/racc-1.4.16-r1::gentoo[ruby_targets_ruby27]
->=dev-ruby/net-telnet-0.2.0 ruby_targets_ruby27
-# required by dev-lang/ruby-2.7.4::gentoo
-# required by dev-ruby/rubygems-3.1.6::gentoo[ruby_targets_ruby27]
-# required by virtual/rubygems-16::gentoo[ruby_targets_ruby27]
-# required by dev-ruby/rdoc-6.3.2::gentoo[-test,ruby_targets_ruby27]
-# required by dev-ruby/bundler-2.1.4::gentoo[ruby_targets_ruby26,doc]
-# required by dev-lang/ruby-2.6.8::gentoo
-# required by virtual/ruby-ssl-11::gentoo[ruby_targets_ruby26]
-# required by dev-ruby/racc-1.4.16-r1::gentoo[ruby_targets_ruby27]
->=dev-ruby/power_assert-1.1.7 ruby_targets_ruby27
-# required by dev-lang/ruby-2.7.4::gentoo
-# required by dev-ruby/rubygems-3.1.6::gentoo[ruby_targets_ruby27]
-# required by virtual/rubygems-16::gentoo[ruby_targets_ruby27]
-# required by dev-ruby/rdoc-6.3.2::gentoo[-test,ruby_targets_ruby27]
-# required by dev-ruby/bundler-2.1.4::gentoo[ruby_targets_ruby26,doc]
-# required by dev-lang/ruby-2.6.8::gentoo
-# required by virtual/ruby-ssl-11::gentoo[ruby_targets_ruby26]
-# required by dev-ruby/racc-1.4.16-r1::gentoo[ruby_targets_ruby27]
->=dev-ruby/rake-13.0.3-r1 ruby_targets_ruby27
-# required by dev-lang/ruby-2.7.4::gentoo
-# required by dev-ruby/rubygems-3.1.6::gentoo[ruby_targets_ruby27]
-# required by virtual/rubygems-16::gentoo[ruby_targets_ruby27]
-# required by dev-ruby/rdoc-6.3.2::gentoo[-test,ruby_targets_ruby27]
-# required by dev-ruby/bundler-2.1.4::gentoo[ruby_targets_ruby26,doc]
-# required by dev-lang/ruby-2.6.8::gentoo
-# required by virtual/ruby-ssl-11::gentoo[ruby_targets_ruby26]
-# required by dev-ruby/racc-1.4.16-r1::gentoo[ruby_targets_ruby27]
->=dev-ruby/test-unit-3.3.9 ruby_targets_ruby27
-# required by dev-lang/ruby-2.7.4::gentoo
-# required by dev-ruby/rubygems-3.1.6::gentoo[ruby_targets_ruby27]
-# required by virtual/rubygems-16::gentoo[ruby_targets_ruby27]
-# required by dev-ruby/rdoc-6.3.2::gentoo[-test,ruby_targets_ruby27]
-# required by dev-ruby/bundler-2.1.4::gentoo[ruby_targets_ruby26,doc]
-# required by dev-lang/ruby-2.6.8::gentoo
-# required by virtual/ruby-ssl-11::gentoo[ruby_targets_ruby26]
-# required by dev-ruby/racc-1.4.16-r1::gentoo[ruby_targets_ruby27]
->=dev-ruby/xmlrpc-0.3.0 ruby_targets_ruby27
-# required by dev-lang/ruby-2.7.4::gentoo
-# required by dev-ruby/rubygems-3.1.6::gentoo[ruby_targets_ruby27]
-# required by virtual/rubygems-16::gentoo[ruby_targets_ruby27]
-# required by dev-ruby/rdoc-6.3.2::gentoo[-test,ruby_targets_ruby27]
-# required by dev-lang/ruby-2.6.8::gentoo[rdoc]
-# required by virtual/ruby-ssl-11::gentoo[ruby_targets_ruby26]
-# required by dev-ruby/racc-1.4.16-r1::gentoo[ruby_targets_ruby27]
->=dev-ruby/bundler-2.1.4 ruby_targets_ruby27
-# required by dev-lang/ruby-2.7.4::gentoo
-# required by dev-ruby/rubygems-3.1.6::gentoo[ruby_targets_ruby27]
-# required by virtual/rubygems-16::gentoo[ruby_targets_ruby27]
-# required by dev-ruby/rdoc-6.3.2::gentoo[-test,ruby_targets_ruby27]
-# required by dev-ruby/bundler-2.1.4::gentoo[ruby_targets_ruby26,doc]
-# required by dev-lang/ruby-2.6.8::gentoo
-# required by virtual/ruby-ssl-11::gentoo[ruby_targets_ruby26]
-# required by dev-ruby/racc-1.4.16-r1::gentoo[ruby_targets_ruby27]
->=dev-ruby/did_you_mean-1.4.0 ruby_targets_ruby27
-# required by dev-lang/ruby-2.7.4::gentoo
-# required by dev-ruby/rubygems-3.1.6::gentoo[ruby_targets_ruby27]
-# required by virtual/rubygems-16::gentoo[ruby_targets_ruby27]
-# required by dev-ruby/rdoc-6.3.2::gentoo[-test,ruby_targets_ruby27]
-# required by dev-ruby/bundler-2.1.4::gentoo[ruby_targets_ruby26,doc]
-# required by dev-lang/ruby-2.6.8::gentoo
-# required by virtual/ruby-ssl-11::gentoo[ruby_targets_ruby26]
-# required by dev-ruby/racc-1.4.16-r1::gentoo[ruby_targets_ruby27]
->=dev-ruby/json-2.3.0 ruby_targets_ruby27
-# required by dev-lang/ruby-2.7.4::gentoo[rdoc]
-# required by dev-ruby/rubygems-3.1.6::gentoo[ruby_targets_ruby27]
-# required by virtual/rubygems-16::gentoo[ruby_targets_ruby27]
-# required by dev-ruby/racc-1.4.16-r1::gentoo
->=dev-ruby/rdoc-6.3.2 ruby_targets_ruby27
-# required by dev-ruby/rdoc-6.3.2::gentoo[ruby_targets_ruby27]
-# required by dev-ruby/bundler-2.1.4::gentoo[ruby_targets_ruby26,doc]
-# required by dev-lang/ruby-2.7.4::gentoo
-# required by dev-ruby/rubygems-3.1.6::gentoo[ruby_targets_ruby27]
-# required by virtual/rubygems-16::gentoo[ruby_targets_ruby27]
-# required by dev-ruby/racc-1.4.16-r1::gentoo
->=dev-ruby/kpeg-1.1.0-r1 ruby_targets_ruby27
-# required by dev-ruby/rdoc-6.3.2::gentoo[ruby_targets_ruby27]
-# required by dev-ruby/bundler-2.1.4::gentoo[ruby_targets_ruby26,doc]
-# required by dev-lang/ruby-2.7.4::gentoo
-# required by dev-ruby/rubygems-3.1.6::gentoo[ruby_targets_ruby27]
-# required by virtual/rubygems-16::gentoo[ruby_targets_ruby27]
-# required by dev-ruby/kpeg-1.1.0-r1::gentoo[-test,ruby_targets_ruby27]
->=dev-ruby/racc-1.4.16-r1 ruby_targets_ruby27
-# required by dev-ruby/racc-1.4.16-r1::gentoo[-test,ruby_targets_ruby27]
-# required by dev-ruby/rdoc-6.3.2::gentoo[ruby_targets_ruby27]
-# required by dev-ruby/bundler-2.1.4::gentoo[ruby_targets_ruby26,doc]
-# required by dev-lang/ruby-2.7.4::gentoo
-# required by dev-ruby/rubygems-3.1.6::gentoo[ruby_targets_ruby27]
->=virtual/rubygems-16 ruby_targets_ruby27
-# required by virtual/rubygems-16::gentoo[ruby_targets_ruby27]
-# required by dev-lang/ruby-2.7.4::gentoo
-# required by virtual/ruby-ssl-11::gentoo[ruby_targets_ruby27]
-# required by dev-ruby/racc-1.4.16-r1::gentoo[ruby_targets_ruby27]
-# required by dev-ruby/rdoc-6.3.2::gentoo[ruby_targets_ruby27]
-# required by dev-ruby/bundler-2.1.4::gentoo[ruby_targets_ruby26,doc]
-# required by dev-lang/ruby-2.6.8::gentoo
-# required by dev-ruby/minitest-5.13.0::gentoo[ruby_targets_ruby26]
->=dev-ruby/rubygems-3.1.6 ruby_targets_ruby27
-# required by dev-ruby/racc-1.4.16-r1::gentoo[ruby_targets_ruby27]
-# required by dev-ruby/rdoc-6.3.2::gentoo[ruby_targets_ruby27]
-# required by dev-ruby/bundler-2.1.4::gentoo[ruby_targets_ruby26,doc]
-# required by dev-lang/ruby-2.7.4::gentoo
-# required by dev-ruby/rubygems-3.1.6::gentoo[ruby_targets_ruby27]
-# required by virtual/rubygems-16::gentoo[ruby_targets_ruby27]
-# required by dev-ruby/kpeg-1.1.0-r1::gentoo[-test,ruby_targets_ruby27]
->=virtual/ruby-ssl-11 ruby_targets_ruby27
-
-
 
 # steam stuff
 app-arch/bzip2 abi_x86_32
@@ -288,7 +52,7 @@ dev-libs/icu abi_x86_32
 # dev-libs/libcroco abi_x86_32
 dev-libs/libffi abi_x86_32
 dev-libs/libpcre abi_x86_32
-dev-libs/libpcre2 abi_x86_32
+dev-libs/libpcre2 abi_x86_32 pcre32
 dev-libs/libtasn1 abi_x86_32
 dev-libs/libunistring abi_x86_32
 dev-libs/libxml2 abi_x86_32
@@ -324,6 +88,7 @@ sys-libs/zlib abi_x86_32
 # virtual/libffi abi_x86_32
 virtual/libiconv abi_x86_32
 virtual/libudev abi_x86_32
+sys-libs/libudev-compat abi_x86_32
 x11-libs/cairo abi_x86_32
 x11-libs/gdk-pixbuf abi_x86_32
 x11-libs/gtk+:2 abi_x86_32
@@ -378,7 +143,6 @@ media-libs/libpulse abi_x86_32
 dev-lang/orc abi_x86_32
 x11-libs/gtk+ abi_x86_32
 media-libs/libepoxy abi_x86_32
-app-accessibility/at-spi2-atk abi_x86_32
 app-accessibility/at-spi2-core abi_x86_32
 media-libs/libdvdcss abi_x86_32
 media-libs/libmpeg2 abi_x86_32
@@ -423,8 +187,6 @@ media-libs/gst-plugins-bad abi_x86_32
 dev-lang/orc abi_x86_32
 x11-libs/gtk+ abi_x86_32
 media-libs/libepoxy abi_x86_32
-app-accessibility/at-spi2-atk abi_x86_32
-app-accessibility/at-spi2-core abi_x86_32
 media-libs/libdvdcss abi_x86_32
 media-libs/libmpeg2 abi_x86_32
 media-libs/libdca abi_x86_32
@@ -706,10 +468,6 @@ media-libs/glu abi_x86_32
 # required by x11-libs/gtk+-2.24.32::gentoo[cups]
 # required by x11-themes/gtk-engines-adwaita-3.22.3::gentoo
 >=net-dns/libidn2-2.0.4 abi_x86_32
-# required by dev-libs/glib-2.52.3::gentoo
-# required by media-sound/pulseaudio-11.1-r1::gentoo[glib]
-# required by media-plugins/alsa-plugins-1.1.1-r1::gentoo[pulseaudio]
->=dev-libs/libpcre-8.41-r1 abi_x86_32
 # required by dev-libs/glib-2.52.3::gentoo[xattr]
 # required by media-sound/pulseaudio-11.1-r1::gentoo[glib]
 # required by media-plugins/alsa-plugins-1.1.1-r1::gentoo[pulseaudio]
@@ -1035,21 +793,6 @@ media-libs/glu abi_x86_32
 # required by media-plugins/gst-plugins-meta-1.14.1::gentoo[aac]
 # required by xfce-extra/tumbler-0.2.0::gentoo[gstreamer]
 # required by tumbler (argument)
->=app-accessibility/at-spi2-atk-2.24.1 abi_x86_32
-# required by app-accessibility/at-spi2-atk-2.24.1::gentoo
-# required by x11-libs/gtk+-3.22.30::gentoo[X]
-# required by media-plugins/gst-plugins-gtk-1.14.1::gentoo
-# required by media-libs/gst-plugins-bad-1.14.1-r1::gentoo[gtk]
-# required by media-plugins/gst-plugins-faad-1.14.1::gentoo
-# required by media-plugins/gst-plugins-meta-1.14.1::gentoo[aac]
-# required by xfce-extra/tumbler-0.2.0::gentoo[gstreamer]
-# required by tumbler (argument)
->=app-accessibility/at-spi2-core-2.24.1 abi_x86_32
-# required by media-video/mjpegtools-2.1.0-r3::gentoo[sdl]
-# required by media-plugins/gst-plugins-mplex-1.14.1::gentoo
-# required by media-plugins/gst-plugins-meta-1.14.1::gentoo[vcd]
-# required by xfce-extra/tumbler-0.2.0::gentoo[gstreamer]
-# required by tumbler (argument)
 >=media-libs/libsdl-1.2.15-r9 abi_x86_32
 # required by media-libs/libsdl-1.2.15-r9::gentoo[sound]
 # required by media-libs/libmpeg2-0.5.1-r2::gentoo[sdl]
@@ -1331,9 +1074,6 @@ media-libs/libwebp abi_x86_32
 # required by @selected
 # required by @world (argument)
 >=media-libs/jpeg-9d abi_x86_32
-# required by dev-python/python-magic-0.4.18::gentoo
-# required by games-util/lutris-9999::gentoo[python_single_target_python3_7]
-sys-apps/file -python
 
 # required by sys-libs/libunwind-1.5.0::gentoo[zlib]
 # required by app-emulation/wine-staging-6.0::gentoo[unwind]
@@ -1371,19 +1111,6 @@ sys-apps/file -python
 # required by @world (argument)
 >=sys-libs/libxcrypt-4.4.25 abi_x86_32
 
-# required by dev-python/cryptography-3.4.7-r2::gentoo[python_targets_python3_8,python_targets_python3_9]
-# required by @__auto_slot_operator_replace_installed__ (argument)
-# required by dev-ruby/xmlrpc-0.3.2-r1::gentoo[ruby_targets_ruby27]
-# required by dev-lang/ruby-2.6.8::gentoo
-# required by virtual/ruby-ssl-11::gentoo[ruby_targets_ruby26]
-# required by dev-ruby/racc-1.4.16-r1::gentoo
-# required by dev-ruby/rdoc-6.3.2::gentoo[ruby_targets_ruby27]
-# required by dev-ruby/bundler-2.1.4::gentoo[ruby_targets_ruby27,doc]
-# required by dev-lang/ruby-2.7.4::gentoo
-# required by app-editors/vim-8.2.3582::gentoo[ruby]
-# required by @selected
-# required by @world (argument)
->=dev-ruby/webrick-1.7.0 ruby_targets_ruby27
 # required by x11-libs/libICE-1.0.10-r1::gentoo
 # required by app-editors/gvim-8.2.4328::gentoo
 # required by @selected
@@ -1406,7 +1133,7 @@ sys-fs/e2fsprogs abi_x86_32
 # required by dev-python/ipywidgets-8.0.2::gentoo
 # required by dev-python/jupyter-1.0.0-r4::gentoo
 # required by dev-python/jupyter (argument)
->=net-libs/zeromq-4.3.4-r1 drafts
+<net-libs/zeromq-5.0 -drafts
 # required by dev-python/qtconsole-5.3.2::gentoo
 # required by dev-python/ipython-8.5.0::gentoo[qt5]
 # required by dev-python/jupyter_console-6.4.4::gentoo
@@ -1424,109 +1151,24 @@ sys-fs/e2fsprogs abi_x86_32
 # required by @selected
 # required by @world (argument)
 >=dev-python/PyQt5-5.15.6 sql
-# required by dev-lang/ruby-3.0.5::gentoo
-# required by dev-ruby/power_assert-1.2.0::gentoo[ruby_targets_ruby30]
-# required by dev-ruby/test-unit-3.3.9::gentoo[ruby_targets_ruby30]
-# required by dev-lang/ruby-2.7.7::gentoo
-# required by dev-ruby/rake-13.0.3-r1::gentoo[ruby_targets_ruby27]
-# required by dev-ruby/json-2.5.1-r1::gentoo[-test,ruby_targets_ruby27]
->=dev-ruby/minitest-5.14.4 ruby_targets_ruby30
-# required by dev-lang/ruby-3.0.5::gentoo
-# required by dev-ruby/minitest-5.14.4::gentoo[ruby_targets_ruby30]
-# required by dev-lang/ruby-2.7.7::gentoo
-# required by dev-ruby/rake-13.0.3-r1::gentoo[ruby_targets_ruby27]
-# required by dev-ruby/json-2.5.1-r1::gentoo[-test,ruby_targets_ruby27]
->=dev-ruby/power_assert-1.2.0 ruby_targets_ruby30
-# required by dev-lang/ruby-3.0.5::gentoo
-# required by dev-ruby/minitest-5.14.4::gentoo[ruby_targets_ruby30]
-# required by dev-lang/ruby-2.7.7::gentoo
-# required by dev-ruby/power_assert-1.2.0::gentoo[ruby_targets_ruby27]
-# required by dev-ruby/test-unit-3.3.9::gentoo[ruby_targets_ruby30]
->=dev-ruby/rake-13.0.3-r1 ruby_targets_ruby30
-# required by dev-ruby/typeprof-0.15.2::gentoo[ruby_targets_ruby30]
-# required by dev-lang/ruby-3.0.5::gentoo
-# required by dev-ruby/minitest-5.14.4::gentoo[ruby_targets_ruby30]
-# required by dev-lang/ruby-2.7.7::gentoo
-# required by dev-ruby/power_assert-1.2.0::gentoo[ruby_targets_ruby27]
-# required by dev-ruby/test-unit-3.3.9::gentoo[ruby_targets_ruby30]
->=dev-ruby/rbs-1.5.1 ruby_targets_ruby30
-# required by dev-lang/ruby-3.0.5::gentoo
-# required by dev-ruby/minitest-5.14.4::gentoo[ruby_targets_ruby30]
-# required by dev-lang/ruby-2.7.7::gentoo
-# required by dev-ruby/power_assert-1.2.0::gentoo[ruby_targets_ruby27]
-# required by dev-ruby/test-unit-3.3.9::gentoo[ruby_targets_ruby30]
->=dev-ruby/rexml-3.2.5-r1 ruby_targets_ruby30
-# required by dev-lang/ruby-3.0.5::gentoo
-# required by dev-ruby/minitest-5.14.4::gentoo[ruby_targets_ruby30]
-# required by dev-lang/ruby-2.7.7::gentoo
-# required by dev-ruby/power_assert-1.2.0::gentoo[ruby_targets_ruby27]
-# required by dev-ruby/test-unit-3.3.9::gentoo[ruby_targets_ruby30]
->=dev-ruby/rss-0.2.9-r1 ruby_targets_ruby30
-# required by dev-lang/ruby-3.0.5::gentoo
-# required by dev-ruby/minitest-5.14.4::gentoo[ruby_targets_ruby30]
-# required by dev-lang/ruby-2.7.7::gentoo
-# required by dev-ruby/power_assert-1.2.0::gentoo[ruby_targets_ruby27]
->=dev-ruby/test-unit-3.3.9 ruby_targets_ruby30
-# required by dev-lang/ruby-3.0.5::gentoo
-# required by dev-ruby/minitest-5.14.4::gentoo[ruby_targets_ruby30]
-# required by dev-lang/ruby-2.7.7::gentoo
-# required by dev-ruby/power_assert-1.2.0::gentoo[ruby_targets_ruby27]
-# required by dev-ruby/test-unit-3.3.9::gentoo[ruby_targets_ruby30]
->=dev-ruby/typeprof-0.15.2 ruby_targets_ruby30
-# required by dev-lang/ruby-3.0.5::gentoo
-# required by dev-ruby/minitest-5.14.4::gentoo[ruby_targets_ruby30]
-# required by dev-lang/ruby-2.7.7::gentoo
-# required by dev-ruby/power_assert-1.2.0::gentoo[ruby_targets_ruby27]
-# required by dev-ruby/test-unit-3.3.9::gentoo[ruby_targets_ruby30]
->=dev-ruby/bundler-2.2.33-r1 ruby_targets_ruby30
-# required by dev-lang/ruby-3.0.5::gentoo
-# required by dev-ruby/minitest-5.14.4::gentoo[ruby_targets_ruby30]
-# required by dev-lang/ruby-2.7.7::gentoo
-# required by dev-ruby/power_assert-1.2.0::gentoo[ruby_targets_ruby27]
-# required by dev-ruby/test-unit-3.3.9::gentoo[ruby_targets_ruby30]
->=dev-ruby/did_you_mean-1.6.3 ruby_targets_ruby30
-# required by dev-lang/ruby-3.0.5::gentoo
-# required by dev-ruby/minitest-5.14.4::gentoo[ruby_targets_ruby30]
-# required by dev-lang/ruby-2.7.7::gentoo
-# required by dev-ruby/power_assert-1.2.0::gentoo[ruby_targets_ruby27]
-# required by dev-ruby/test-unit-3.3.9::gentoo[ruby_targets_ruby30]
->=dev-ruby/json-2.5.1-r1 ruby_targets_ruby30
-# required by dev-lang/ruby-3.0.5::gentoo[rdoc]
-# required by dev-ruby/minitest-5.14.4::gentoo[ruby_targets_ruby30]
-# required by dev-lang/ruby-2.7.7::gentoo
-# required by dev-ruby/power_assert-1.2.0::gentoo[ruby_targets_ruby27]
-# required by dev-ruby/test-unit-3.3.9::gentoo[ruby_targets_ruby30]
->=dev-ruby/rdoc-6.3.2 ruby_targets_ruby30
-# required by dev-ruby/rdoc-6.3.2::gentoo[ruby_targets_ruby30]
-# required by dev-lang/ruby-3.0.5::gentoo[rdoc]
-# required by dev-ruby/minitest-5.14.4::gentoo[ruby_targets_ruby30]
-# required by dev-lang/ruby-2.7.7::gentoo
-# required by dev-ruby/power_assert-1.2.0::gentoo[ruby_targets_ruby27]
-# required by dev-ruby/test-unit-3.3.9::gentoo[ruby_targets_ruby30]
->=dev-ruby/kpeg-1.1.0-r1 ruby_targets_ruby30
-# required by dev-ruby/rdoc-6.3.2::gentoo[ruby_targets_ruby30]
-# required by dev-lang/ruby-3.0.5::gentoo[rdoc]
-# required by dev-ruby/minitest-5.14.4::gentoo[ruby_targets_ruby30]
-# required by dev-lang/ruby-2.7.7::gentoo
-# required by dev-ruby/power_assert-1.2.0::gentoo[ruby_targets_ruby27]
-# required by dev-ruby/test-unit-3.3.9::gentoo[ruby_targets_ruby30]
->=dev-ruby/racc-1.6.0 ruby_targets_ruby30
-# required by dev-ruby/json-2.5.1-r1::gentoo[-test,ruby_targets_ruby30]
-# required by dev-lang/ruby-3.0.5::gentoo
-# required by dev-ruby/rubygems-3.2.33::gentoo[ruby_targets_ruby30]
->=virtual/rubygems-16 ruby_targets_ruby30
-# required by virtual/rubygems-16::gentoo[ruby_targets_ruby30]
-# required by dev-lang/ruby-3.0.5::gentoo
-# required by virtual/ruby-ssl-11::gentoo[ruby_targets_ruby30]
-# required by dev-ruby/racc-1.6.0::gentoo[ruby_targets_ruby30]
-# required by dev-ruby/rdoc-6.3.2::gentoo[ruby_targets_ruby27]
-# required by dev-lang/ruby-2.7.7::gentoo[rdoc]
-# required by dev-ruby/minitest-5.14.4::gentoo[ruby_targets_ruby27]
->=dev-ruby/rubygems-3.2.33 ruby_targets_ruby30
-# required by dev-ruby/racc-1.6.0::gentoo[ruby_targets_ruby30]
-# required by dev-ruby/rdoc-6.3.2::gentoo[ruby_targets_ruby27]
-# required by dev-lang/ruby-3.0.5::gentoo[rdoc]
-# required by dev-ruby/rubygems-3.2.33::gentoo[ruby_targets_ruby30]
-# required by virtual/rubygems-16::gentoo[ruby_targets_ruby27]
-# required by dev-ruby/kpeg-1.1.0-r1::gentoo[-test,ruby_targets_ruby30]
->=virtual/ruby-ssl-11 ruby_targets_ruby30
+
+# required by net-misc/curl-8.6.0-r1::gentoo[psl]
+# required by dev-lang/rust-1.74.1::gentoo
+# required by virtual/rust-1.74.1::gentoo
+# required by gnome-base/librsvg-2.57.0::gentoo
+# required by media-video/ffmpeg-4.4.4-r8::gentoo[svg]
+# required by media-libs/gegl-0.4.46::gentoo
+# required by media-gfx/gimp-2.10.34-r2::gentoo
+# required by @selected
+# required by @world (argument)
+>=net-libs/libpsl-0.21.5 abi_x86_32
+# required by media-libs/libsndfile-1.2.2-r2::gentoo[-minimal]
+# required by media-sound/pulseaudio-daemon-17.0-r1::gentoo
+# required by media-libs/libpulse-17.0::gentoo
+# required by media-libs/libsdl2-2.28.5::gentoo[pulseaudio]
+# required by media-video/ffmpeg-4.4.4-r8::gentoo[sdl]
+# required by media-libs/gegl-0.4.46::gentoo
+# required by media-gfx/gimp-2.10.34-r2::gentoo
+# required by @selected
+# required by @world (argument)
+>=media-sound/mpg123-base-1.32.3 abi_x86_32

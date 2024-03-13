@@ -1,3 +1,4 @@
+net-im/telegram-desktop-bin ~amd64
 sci-electronics/ghdl-bin ~amd64
 media-video/obs-v4l2sink ~amd64
 app-emulation/vmware-horizon-client ~amd64
@@ -13,7 +14,8 @@ x11-terms/xfce4-terminal ~amd64
 sys-libs/libomp ~amd64
 x11-libs/libdrm ~amd64
 net-im/telegram-desktop ~amd64
-dev-python/python-evdev ~amd64
+# move dev-python/python-evdev dev-python/evdev
+dev-python/evdev ~amd64
 media-sound/bluez-alsa ~amd64
 x11-misc/pywal ~amd64
 media-gfx/flameshot ~amd64
@@ -48,7 +50,8 @@ app-emulation/wine-mono ~amd64
 app-emulation/winetricks ~amd64
 app-emulation/vkd3d ~amd64
 virtual/wine ~amd64
-dev-util/cmake ~amd64
+# move dev-util/cmake dev-build/cmake
+dev-build/cmake ~amd64
 net-im/zoom ~amd64
 games-util/qjoypad ~amd64
 dev-vcs/gitstats ~amd64
@@ -69,10 +72,8 @@ media-video/obs-studio ~amd64
 
 # live ebuilds
 =x11-wm/herbstluftwm-9999 **
-=net-misc/youtube-dl-9999 **
+# =net-misc/youtube-dl-9999 ** needs replacement ?
 =app-misc/neofetch-9999 **
-=net-im/chatterino2-9999 **
-# =games-util/lutris-9999 **
 
 # clang / llvm stuff
 # <sys-devel/clang-13 ~amd64
@@ -94,3 +95,14 @@ media-libs/tg_owt ~amd64
 dev-libs/libdispatch ~amd64
 # required by cpdf
 =dev-ml/camlpdf-2.3.1 ~amd64
+# required by telegram
+#=dev-cpp/glibmm-2.78.0::gentoo ~amd64
+#=dev-cpp/cppgir-0_p20230926::gentoo ~amd64
+#=dev-cpp/expected-lite-0.6.3::gentoo ~amd64
+# required by transmission
+#=dev-libs/glib-2.78.0::gentoo ~amd64
+# required by steam
+=sys-libs/libudev-compat-186-r1::gentoo ~amd64
+# required by inkscape
+=dev-libs/boost-1.82.0-r1::gentoo ~amd64
+

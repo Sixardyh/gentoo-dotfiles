@@ -10,7 +10,7 @@ mv ../.config.bak .config
 
 make modules_prepare
 emerge -q @module-rebuild
-make -j8
+time make -j8
 make modules_install
 mount /boot
 make install

@@ -109,10 +109,10 @@ augroup configgroup
     autocmd BufEnter *.sh setlocal tabstop=2
     autocmd BufEnter *.sh setlocal shiftwidth=2
     autocmd BufEnter *.sh setlocal softtabstop=2
-    autocmd BufEnter *.asm setlocal ALEDisableBuffer
     autocmd BufEnter *.asm setlocal tabstop=8
     autocmd BufEnter *.asm setlocal shiftwidth=8
     autocmd BufEnter *.asm setlocal softtabstop=8
+    autocmd BufEnter *.asm ALEDisableBuffer
     " clear all trailing whitespaces on save
     autocmd BufWritePre * %s/\s\+$//e
     autocmd ColorScheme gruvbox hi SpellBad cterm=Underline ctermfg=red
@@ -140,6 +140,8 @@ syntax enable
 " ale config
 let g:ale_python_flake8_options = '--ignore=E701,E501,W391,E741,E722,W503,E129'
 let g:airline#extensions#ale#enabled = 1
+let g:ale_virtualtext_cursor = 'disabled'
+
 
 " GUI options
 set guioptions-=m  "remove menu bar

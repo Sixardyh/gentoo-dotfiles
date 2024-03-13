@@ -1,5 +1,5 @@
 #!/bin/sh
-xrandr --output HDMI-A-0 --primary --mode 1920x1080 --pos 1152x550 --rotate normal --output DisplayPort-0 --mode 2048x1152 --pos 0x0 --rotate left
+xrandr --output HDMI-A-0 --primary --mode 1920x1080 --pos 1152x550 --rotate normal --output DisplayPort-0 --mode 2048x1152 --pos 0x0 --rotate right
 # xrandr --output HDMI-A-0 --primary --mode 1920x1080 --pos 122x550 --rotate normal --output DisplayPort-0 --mode 2048x1152 --pos 2042x0 --rotate left
 herbstclient remove_monitor 0
 herbstclient remove_monitor 1

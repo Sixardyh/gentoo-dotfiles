@@ -1,1 +1,1 @@
-../../usr/local/portage/profiles/desktop-systemd-17.1
+../../usr/portage/profiles/default/linux/amd64/17.1/desktop/systemd/merged-usr
